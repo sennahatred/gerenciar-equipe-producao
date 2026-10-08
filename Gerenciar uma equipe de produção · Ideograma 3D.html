@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Gerenciar uma equipe de produção · Ideograma 3D</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark;--bl:#5b9bff;--mu:#8b9098;--e:cubic-bezier(.2,.8,.2,1)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0;overflow:hidden;background:#0d0e10;color:#e8eaed;font:12px/1.35 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+#s{position:absolute;left:50%;top:50%;width:1280px;height:720px;margin:-360px 0 0 -640px;perspective:1500px;perspective-origin:50% 40%;overflow:hidden;background:linear-gradient(#ffffff08 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,#ffffff08 1px,transparent 1px) 0 0/40px 40px,radial-gradient(ellipse at 50% 42%,#272a30,#0d0e10 72%)}
+#sc{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));transition:transform .5s ease-out}
+#t{position:absolute;left:30px;top:22px;font-size:11px;letter-spacing:.14em;color:var(--mu);line-height:1.6}
+#t b{display:block;color:#fff;font-size:13px}
+#h{position:absolute;right:30px;bottom:22px;font-size:10.5px;letter-spacing:.1em;color:#5f646c}
+.b{position:absolute;width:var(--w);height:var(--d);transform-style:preserve-3d;--ct:#a3a9b1;--cf:#646a73;--cr:#464b53}
+.b u{position:absolute;display:block;box-shadow:inset 0 0 0 1px #ffffff1f}
+.b .t{inset:0;transform:translateZ(var(--h));background:var(--ct)}
+.b .f{left:0;top:100%;width:100%;height:var(--h);transform-origin:0 0;transform:rotateX(90deg);background:var(--cf)}
+.b .r{left:100%;top:0;width:var(--h);height:100%;transform-origin:0 0;transform:rotateY(-90deg);background:var(--cr)}
+.bl{--ct:#5b9bff;--cf:#2f6bd8;--cr:#2252a8}
+.wh{--ct:#e4e7eb;--cf:#9aa0a8;--cr:#6e747c}
+.dk{--ct:#1d2025;--cf:#15171a;--cr:#101215}
+.dk .t{background:linear-gradient(#ffffff12 1px,transparent 1px) 0 0/20px 20px,linear-gradient(90deg,#ffffff12 1px,transparent 1px) 0 0/20px 20px,#1d2025}
+.bt .t{background:linear-gradient(90deg,#ffffff1c 2px,transparent 2px) 0 0/50px 100%,#1d2025;animation:bg .62s linear infinite}
+.gl{--ct:#5b9bff22;--cf:#5b9bff1a;--cr:#5b9bff14}.gl u{box-shadow:inset 0 0 0 1px #5b9bffaa}
+.p .t,.p .f,.p .r{background:currentColor}.p .f{opacity:.8}.p .r{opacity:.6}
+.st,.p{color:#4f545c;animation:f 12s infinite}
+.mod{position:absolute;left:calc(var(--x) - 160px);top:calc(var(--y) - 115px);width:320px;height:230px;transform-style:preserve-3d;cursor:pointer;transition:transform 1s var(--e)}
+.mod.on{transform:translate3d(var(--dx),var(--dy),150px) scale(1.4)}
+#sc.a .mod:not(.on){transform:translateZ(-180px)}
+.mod:before{content:"";position:absolute;left:20px;top:100px;width:280px;height:120px;background:radial-gradient(closest-side,#000c,#0000);transform:translateZ(-40px)}
+.mod:after,.core:after{content:"";position:absolute;inset:-30px;background:radial-gradient(closest-side,#0d0e10b0,#0d0e1000);opacity:0;pointer-events:none;transform:translateZ(200px);transition:opacity .8s}
+#sc.a .mod:not(.on):after,#sc.a .core:after{opacity:1}
+.hd{position:absolute;left:10px;top:0;width:300px;transform:translateZ(46px);transition:transform .9s var(--e)}
+.hd b{display:block;font-size:15px;letter-spacing:.12em}.hd em,.bb em{color:var(--bl);font-style:normal}
+.hd small{display:block;color:var(--mu);font-size:10.5px}
+.mod:hover .hd b{color:var(--bl)}
+.pl{position:absolute;left:40px;top:72px;width:240px;height:150px;transform-style:preserve-3d;transform:rotateX(60deg) rotateZ(35deg)}
+.L{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(var(--z));transition:transform .9s var(--e)}
+.on .L{transform:translateZ(calc(var(--z) * 2.6))}.on .hd{transform:translateZ(135px)}.on .ch{transform:translateZ(150px)}
+.bb{position:absolute;white-space:nowrap;transform-origin:0 100%;transform:rotateZ(-35deg) rotateX(-60deg);font-size:10.5px;letter-spacing:.06em}
+.tg{color:#c4c8ce;letter-spacing:.14em}
+.pn{background:#111316ee;border:1px solid #3d4249;padding:4px 8px;line-height:1.5}
+.pn b{display:block;color:var(--bl);letter-spacing:.14em;font-size:9.5px}
+.pn i{display:block;height:3px;margin-top:3px;background:linear-gradient(90deg,var(--bl) var(--p),#363a41 0)}
+.nt{background:#1b2a47;border:1px solid var(--bl);color:#cfe0ff;padding:2px 6px;animation:fl 2.4s ease-in-out infinite}
+.ln{stroke:#3d82ff55;stroke-width:1.5;transition:.3s}line.hl{stroke:#9cc2ff;stroke-width:3}
+.ch{position:absolute;left:0;bottom:0;width:320px;display:flex;justify-content:center;gap:12px;transform:translateZ(60px);transition:transform .9s var(--e)}
+.ch s{position:relative;text-decoration:none;font-size:9.5px;letter-spacing:.05em;padding:2px 4px;border:1px solid #3b4047;color:var(--mu);background:#121416ee;transition:.3s}
+.ch s+s:before{content:"›";position:absolute;left:-10px;top:1px;color:#5a5f67}
+.ch s.hl{color:#cfe0ff;border-color:var(--bl);background:#16294a;box-shadow:0 0 12px #3d82ff66}
+.fl s{animation:g 3.6s infinite;animation-delay:calc(var(--i)*.9s)}
+.core{position:absolute;left:540px;top:223px;width:200px;height:190px;transform-style:preserve-3d;transition:transform 1s var(--e)}
+#sc.a .core{transform:translateZ(-200px)}
+.core .pl{left:0;top:30px;width:200px;height:150px}
+.cl{position:absolute;left:-30px;top:22px;width:260px;text-align:center;font-size:14px;font-weight:700;letter-spacing:.16em;line-height:1.35;transform:translateZ(72px)}
+.cl:after{content:"";display:block;width:1px;height:22px;margin:6px auto 0;background:linear-gradient(var(--bl),transparent)}
+.out{position:absolute;left:390px;top:424px;width:500px;text-align:center;transform:translateZ(24px);transition:opacity .8s}
+#sc.a .out{opacity:.2}
+.out b{display:block;font-size:22px;letter-spacing:.22em}
+.out i{display:block;color:var(--bl);font-style:normal;font-size:20px;line-height:1.2}
+.out span{font-size:11.5px;letter-spacing:.2em;color:#c4c8ce}.out span+span:before{content:"·";margin:0 .8em;color:var(--bl)}
+.cv{position:absolute;left:140px;top:606px;width:1000px;height:70px;transform-style:preserve-3d;transform:rotateX(55deg)}
+.st{position:absolute;top:548px;width:167px;text-align:center;font-size:12px;letter-spacing:.14em;font-weight:600}
+.st small{display:block;font-size:9.5px;font-weight:400;letter-spacing:.1em}
+#fw{position:absolute;left:0;top:0;transform:translateZ(-6px);transition:opacity .8s}#sc.a #fw{opacity:.15}
+#fw path{animation:dash 1.2s linear infinite}
+.pt1{animation:r1 3.6s linear infinite}.pt2{animation:r2 12s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-20}}
+@keyframes bg{to{background-position:50px 0,0 0}}
+@keyframes f{0%,16%{color:#5b9bff;text-shadow:0 0 14px #3d82ff88}17%,100%{color:#4f545c;text-shadow:none}}
+@keyframes g{0%,24%{color:#cfe0ff;border-color:#5b9bff;background:#16294a}25%,100%{color:#8b9098;border-color:#3b4047;background:#121416ee}}
+@keyframes fl{50%{translate:0 0 9px}}
+@keyframes r1{from{transform:translateZ(5px)}to{transform:translateZ(5px) translateX(196px)}}
+@keyframes r2{from{transform:translateZ(8px)}to{transform:translateZ(8px) translateX(970px)}}
+.mod,.core{transition:transform 1s var(--e),filter .8s}
+.out,#fw,.cv,.st{transition:opacity .8s,filter .8s}
+.mod:before{transition:left .8s,top .8s,width .8s,height .8s}
+#sc.a .mod:not(.on),#sc.a .core,#sc.a .out,#sc.a .cv,#sc.a .st,#sc.a #fw{filter:blur(7px)}
+.mod.on:before{left:-50px;top:-40px;width:420px;height:310px}
+.on .hd,.on .ch{text-shadow:0 0 8px #000,0 0 3px #000}
+@media (prefers-reduced-motion:reduce){*{animation-duration:30s!important}}
+</style></head><body><div id="s"><div id="t"><b>GERENCIAR UMA EQUIPE DE PRODUÇÃO</b>DE PEÇAS NA LINHA DE FRENTE</div><div id="sc"></div><div id="h">CLIQUE EM UM MÓDULO · ESC PARA VOLTAR</div></div>
+<script>
+const B=(w,d,h,x,y,c='',s='')=>`<i class="b ${c}" style="--w:${w}px;--d:${d}px;--h:${h}px;left:${x}px;top:${y}px;${s}"><u class=t></u><u class=f></u><u class=r></u></i>`;
+const T=(x,y,h,c='')=>`<span class="bb ${c}" style="left:${x}px;top:${y}px">${h}</span>`;
+const I=(x,y,l,p)=>T(x,y,`${l} <em>${p}%</em><i style="--p:${p}%"></i>`,'pn');
+const L=(z,h)=>`<div class=L style="--z:${z}px">${h}</div>`;
+const CH=(a,c)=>`<div class="ch ${c}">${a.map((t,i)=>`<s style="--i:${i}">${t}</s>`).join('')}</div>`;
+const M=(x,y,dx,dy,t,sub,pl,ch)=>`<div class=mod style="--x:${x}px;--y:${y}px;--dx:${dx}px;--dy:${dy}px"><div class=hd><b>${t}</b>${sub.map(s=>`<small>${s}</small>`).join('')}</div><div class=pl>${B(240,150,8,0,0,'dk')}${pl}</div>${ch}</div>`;
+const W=[[133,48],[193,48],[133,98],[193,98]];
+const m1=M(215,300,425,30,'01 — <em>CONHECIMENTO</em>',['Controle de Qualidade','Gestão de Processos (Lean Manufacturing)'],
+ L(8,B(224,26,5,8,62)+B(14,14,14,14,68,'bl pt1'))+
+ L(24,[40,88,136,184].map(x=>B(6,42,26,x,54,'gl')+B(8,8,4,x-1,72,'bl','transform:translateZ(26px)')).join(''))+
+ L(56,I(190,4,'QUALIDADE',98)+I(4,112,'EFICIÊNCIA',92)),
+ CH(['PRODUÇÃO','INSPEÇÃO','CONTROLE','QUALIDADE'],'fl'));
+const m2=M(1065,300,-425,30,'02 — <em>HABILIDADE</em>',['Controle de Qualidade','Comunicação Clara e Direta'],
+ L(8,B(110,64,6,118,38)+B(22,22,30,18,64,'bl')+W.map(([x,y])=>B(14,14,16,x-7,y-7,'wh','transform:translateZ(6px)')).join(''))+
+ L(44,`<svg width="240" height="150" style="position:absolute;left:0;top:0;overflow:visible"><g class=seq>${W.map(([x,y])=>`<line class="ln" x1="29" y1="75" x2="${x}" y2="${y}" />`).join('')}</g>${W.map(([x,y])=>`<circle r="2.5" fill="#cfe0ff"><animateMotion dur="1.6s" repeatCount="indefinite" path="M29 75L${x} ${y}"/></circle>`).join('')}</svg>`)+
+ L(66,T(4,60,'LÍDER','tg')+T(150,22,'EQUIPE','tg')),
+ CH(['LÍDER','ORIENTAÇÃO','EQUIPE','EXECUÇÃO'],'seq'));
+const m3=M(640,129,0,201,'03 — <em>ATITUDE</em>',['Garantir clareza nas metas diárias','Dar feedbacks construtivos e imediatos'],
+ L(8,B(20,20,28,26,98,'bl')+[[156,40],[190,78],[156,112]].map(([x,y])=>B(14,14,14,x,y,'wh')).join(''))+
+ L(38,T(10,45,'<b>METAS DO DIA</b>✓ 120 peças<br>✓ Qualidade ≥ 98%<br>○ Zero retrabalho','pn'))+
+ L(66,T(110,26,'✓ Ritmo ótimo','nt')+T(100,134,'↻ Ajustar etapa 3','nt')),
+ CH(['META','EXECUÇÃO','FEEDBACK','AJUSTE'],'seq'));
+const core=`<div class=core><div class=cl>GERENCIAR UMA EQUIPE<br>DE PRODUÇÃO</div><div class=pl>${B(150,110,8,25,20,'dk')}${L(8,B(110,74,24,45,38)+B(78,48,8,61,51,'bl','transform:translateZ(24px)'))}</div></div>`;
+const fw=`<svg id="fw" width="1280" height="720"><g fill="none" stroke="#5b9bff" stroke-width="1.5" stroke-dasharray="3 7"><path d="M360 335C450 335 480 330 545 330"/><path d="M920 335C830 335 800 330 735 330"/><path d="M640 228V248"/><path d="M640 372V424" stroke-width="2.5"/></g></svg>`;
+const out=`<div class=out><b>LIDERANÇA EFICIENTE</b><i>↓</i><span>EQUIPE MAIS ORGANIZADA</span><span>PRODUTIVA</span><span>EFICIENTE</span></div>`;
+const N=['PROCESSO','QUALIDADE','COMUNICAÇÃO','META','FEEDBACK','RESULTADO'];
+const cv=`<div class=cv>${B(1000,70,8,0,0,'dk bt')}${N.map((n,i)=>B(8,8,28,i*166.7+79,-18,'p','animation-delay:'+i*2+'s')).join('')}${B(30,34,24,0,18,'bl pt2')}</div>`+N.map((n,i)=>`<div class=st style="left:${140+i*166.7}px;animation-delay:${i*2}s"><small>0${i+1}</small>${n}</div>`).join('');
+const S=document.getElementById('s'),sc=document.getElementById('sc');
+sc.innerHTML=fw+core+m1+m2+m3+out+cv;
+let k=0;const tick=()=>{k++;document.querySelectorAll('.seq').forEach(g=>[...g.children].forEach((c,i)=>c.classList.toggle('hl',i===k%g.children.length)))};
+setInterval(tick,900);tick();
+const mods=[...document.querySelectorAll('.mod')];
+const set=m=>{mods.forEach(x=>x.classList.toggle('on',x===m));sc.classList.toggle('a',!!m);k=-1;tick()};
+mods.forEach(m=>m.onclick=e=>{e.stopPropagation();set(m.classList.contains('on')?null:m)});
+S.onclick=()=>set(null);addEventListener('keydown',e=>e.key==='Escape'&&set(null));
+S.onpointermove=e=>{sc.style.setProperty('--ty',(e.clientX/innerWidth-.5)*12+'deg');sc.style.setProperty('--tx',-(e.clientY/innerHeight-.5)*8+'deg')};
+const fit=()=>{const w=innerWidth,h=innerHeight,p=h>w*1.1,q=p?Math.min(h/1280,w/720):Math.min(w/1280,h/720);S.style.transform=(p?'rotate(90deg) ':'')+`scale(${q})`};
+fit();addEventListener('resize',fit);
+</script></body></html>
